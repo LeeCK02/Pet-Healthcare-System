@@ -4,8 +4,8 @@ include 'config/config.php';
 $id = $_GET['edit'];
 
 if (isset($_POST['update_product'])) {
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $description = mysqli_real_escape_string($conn, $_POST['description']);
     $type = $_POST['type'];
     $price = $_POST['price'];
     $quantity = $_POST['quantity'];
